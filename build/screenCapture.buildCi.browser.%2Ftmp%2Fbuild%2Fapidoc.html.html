@@ -1,0 +1,1613 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/PearsonEducation/Thalassa">thalassa (v0.4.1)</a>
+</h1>
+<h4>A lightweight service registry using Redis inspired by Seaport</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.thalassa">module thalassa</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thalassa.Client">
+            function <span class="apidocSignatureSpan">thalassa.</span>Client
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thalassa.RedisData">
+            function <span class="apidocSignatureSpan">thalassa.</span>RedisData
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thalassa.Server">
+            function <span class="apidocSignatureSpan">thalassa.</span>Server
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">thalassa.</span>Client.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">thalassa.</span>RedisData.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">thalassa.</span>Server.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.thalassa.Client">module thalassa.Client</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thalassa.Client.Client">
+            function <span class="apidocSignatureSpan">thalassa.</span>Client
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thalassa.Client.super_">
+            function <span class="apidocSignatureSpan">thalassa.Client.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.thalassa.Client.prototype">module thalassa.Client.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thalassa.Client.prototype._keySearch">
+            function <span class="apidocSignatureSpan">thalassa.Client.prototype.</span>_keySearch
+            <span class="apidocSignatureSpan">(name, version)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thalassa.Client.prototype._sendHTTPUpdate">
+            function <span class="apidocSignatureSpan">thalassa.Client.prototype.</span>_sendHTTPUpdate
+            <span class="apidocSignatureSpan">(intent)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thalassa.Client.prototype._sendUpdate">
+            function <span class="apidocSignatureSpan">thalassa.Client.prototype.</span>_sendUpdate
+            <span class="apidocSignatureSpan">(intent)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thalassa.Client.prototype._startUpdateInterval">
+            function <span class="apidocSignatureSpan">thalassa.Client.prototype.</span>_startUpdateInterval
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thalassa.Client.prototype.close">
+            function <span class="apidocSignatureSpan">thalassa.Client.prototype.</span>close
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thalassa.Client.prototype.del">
+            function <span class="apidocSignatureSpan">thalassa.Client.prototype.</span>del
+            <span class="apidocSignatureSpan">(name, version, host, port, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thalassa.Client.prototype.getRegistrations">
+            function <span class="apidocSignatureSpan">thalassa.Client.prototype.</span>getRegistrations
+            <span class="apidocSignatureSpan">(name, version, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thalassa.Client.prototype.register">
+            function <span class="apidocSignatureSpan">thalassa.Client.prototype.</span>register
+            <span class="apidocSignatureSpan">(name, version, port, meta)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thalassa.Client.prototype.socketConnect">
+            function <span class="apidocSignatureSpan">thalassa.Client.prototype.</span>socketConnect
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thalassa.Client.prototype.start">
+            function <span class="apidocSignatureSpan">thalassa.Client.prototype.</span>start
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thalassa.Client.prototype.stop">
+            function <span class="apidocSignatureSpan">thalassa.Client.prototype.</span>stop
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thalassa.Client.prototype.subscribe">
+            function <span class="apidocSignatureSpan">thalassa.Client.prototype.</span>subscribe
+            <span class="apidocSignatureSpan">(name, version)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thalassa.Client.prototype.unregister">
+            function <span class="apidocSignatureSpan">thalassa.Client.prototype.</span>unregister
+            <span class="apidocSignatureSpan">(name, version, port)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thalassa.Client.prototype.unsubscribe">
+            function <span class="apidocSignatureSpan">thalassa.Client.prototype.</span>unsubscribe
+            <span class="apidocSignatureSpan">(name, version)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.thalassa.RedisData">module thalassa.RedisData</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thalassa.RedisData.RedisData">
+            function <span class="apidocSignatureSpan">thalassa.</span>RedisData
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thalassa.RedisData.super_">
+            function <span class="apidocSignatureSpan">thalassa.RedisData.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.thalassa.RedisData.prototype">module thalassa.RedisData.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thalassa.RedisData.prototype._getRegistrations">
+            function <span class="apidocSignatureSpan">thalassa.RedisData.prototype.</span>_getRegistrations
+            <span class="apidocSignatureSpan">(keySearch, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thalassa.RedisData.prototype.clearDb">
+            function <span class="apidocSignatureSpan">thalassa.RedisData.prototype.</span>clearDb
+            <span class="apidocSignatureSpan">(cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thalassa.RedisData.prototype.del">
+            function <span class="apidocSignatureSpan">thalassa.RedisData.prototype.</span>del
+            <span class="apidocSignatureSpan">(regId, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thalassa.RedisData.prototype.getRegistrations">
+            function <span class="apidocSignatureSpan">thalassa.RedisData.prototype.</span>getRegistrations
+            <span class="apidocSignatureSpan">(name, version, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thalassa.RedisData.prototype.runReaper">
+            function <span class="apidocSignatureSpan">thalassa.RedisData.prototype.</span>runReaper
+            <span class="apidocSignatureSpan">(cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thalassa.RedisData.prototype.update">
+            function <span class="apidocSignatureSpan">thalassa.RedisData.prototype.</span>update
+            <span class="apidocSignatureSpan">(reg, secondsToExpire, cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.thalassa.Server">module thalassa.Server</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thalassa.Server.Server">
+            function <span class="apidocSignatureSpan">thalassa.</span>Server
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.thalassa.Server.prototype">module thalassa.Server.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thalassa.Server.prototype.close">
+            function <span class="apidocSignatureSpan">thalassa.Server.prototype.</span>close
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.thalassa" id="apidoc.module.thalassa">module thalassa</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.thalassa.Client" id="apidoc.element.thalassa.Client">
+        function <span class="apidocSignatureSpan">thalassa.</span>Client
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Client = function (opts) {
+  if (typeof opts !== 'object') opts = {};
+  this.log = (typeof opts.log === 'function') ? opts.log : function (){};
+
+  EventEmitter.call(this);
+
+  this.APIPORT        = opts.apiport || 9000;
+  this.PORT           = opts.port || 5001;
+  this.HOST           = opts.host || '127.0.0.1';
+  this.UPDATE_FREQ    = opts.updateFreq || 20000;
+  this.TIMEOUT        = opts.updateTimeout || 2500;
+  this.SEC_TO_EXPIRE  = opts.secsToExpire || 60;
+  this.MODE           = opts.mode || 'http';
+  this.MY_IP          = ip.address();
+
+  this.isOn = false;
+  this.intents = [];
+  this.regCache = {};
+  this.pending = {};
+
+  this.socket = null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    --secsToExpire   default time in seconds for a thalassa registration to be valid  [default: 60]
+    --updateFreq     time frequency in ms to ping the thalassa server                 [default: 20000]
+    --updateTimeout  time in ms to wait for a registrion request to respond           [default: 2500]
+    --debug          enabled debug logging
+
+## Client as an Embedded Module
+
+Using the client from within a node.js application to register your service is simple. Pass options via the `opts` object like `
+new Thalassa.<span class="apidocCodeKeywordSpan">Client</span>(opts)`:
+
+var Thalassa = require('thalassa');
+
+var client = new Thalassa.Client({
+  port: 4444,
+  apiport: 4445,
+  host: 'localhost'
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thalassa.RedisData" id="apidoc.element.thalassa.RedisData">
+        function <span class="apidocSignatureSpan">thalassa.</span>RedisData
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function RedisData(opts) {
+  events.EventEmitter.call(this);
+
+  if (!opts) opts = {};  var self = this;
+  this.log = (typeof opts.log === 'function') ? opts.log : noop;
+
+  this.SECONDS_TO_EXPIRE = opts.secondsToExpire || 10;
+  this.REGISTRATIONS_SET_KEY = '__thalassa.registrations';
+  this.REDIS_HOST = opts.redisHost || '127.0.0.1';
+  this.REDIS_PORT = opts.redisPort || 6379;
+  this.REDIS_DB = opts.redisDatabase || 0;
+
+  this.redisClient = redis.createClient(this.REDIS_PORT, this.REDIS_HOST);
+  this.redisClient.select(this.REDIS_DB);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thalassa.Server" id="apidoc.element.thalassa.Server">
+        function <span class="apidocSignatureSpan">thalassa.</span>Server
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Server = function (opts) {
+  var self = this;
+  if (typeof opts !== 'object') opts = {};
+  this.log = (typeof opts.log === 'function') ? opts.log : function (){};
+
+  this.PORT         = opts.port || 5001;
+  this.IP           = ip.address();
+  this.API_PORT     = opts.apiport || 9000;
+  this.REAPER_FREQ  = opts.reaperFreq || 2000;
+  this.UPDATE_FREQ  = opts.updateFreq || 30000;
+
+  this.pub = axon.socket('pub');
+
+  var me = {
+    name:     pkg.name,
+    version:  pkg.version,
+    host:     self.IP,
+    port:     self.API_PORT,
+    meta:     {
+      hostname: require('os').hostname,
+      axonSocket: self.PORT
+    }
+  };
+
+  var secondsToExpire = Math.ceil((this.UPDATE_FREQ / 1000) * 2);
+
+  //
+  // Connect to Redis, register yourself, and do so regularly
+  //
+  this.data = new RedisData(opts);
+  self.data.update(me, secondsToExpire);
+  this._updateInterval = setInterval(function () {
+    self.data.update(me, secondsToExpire);
+  }, this.UPDATE_FREQ);
+
+  //
+  // API server
+  //
+  this.apiServer = Hapi.createServer(this.API_PORT);
+  require('./httpApi')(this);
+  this.apiServer.start(function () {
+    self.log('info', util.format("Thalassa API HTTP server listening on %s", self.API_PORT));
+  });
+
+  //
+  // Schedule the Reaper!
+  //
+  this._reaperInterval = setInterval(function () {
+    self.data.runReaper();
+  }, this.REAPER_FREQ);
+
+  //
+  // Setup Publisher Socket
+  //
+  self.pub.set('identity', 'thalassa|' + this.IP + ':' + this.PORT);
+  self.log('debug', util.format("attempting to bind to %s", this.PORT));
+  self.pub.bind(this.PORT);
+  this.data.on('online', onOnline);
+  this.data.on('offline', onOffline);
+  self.log('info', util.format("Thalassa socket server listening at %s", this.PORT));
+
+  //
+  // At startup, publish `online` for all existing registrations.
+  // Do this before the reaper interval runs the first time. By then hopefully clients
+  // will have had the opportunity to check back in if Thalassa was down and no other
+  // Thalassa server was running, reaping and serving check ins
+  //
+  self.log('debug', "Publishing 'online' for all known registrations");
+  this.data.getRegistrations(function (err, regs) {
+    if (err) {
+      // this is not good, error, exit the process and better luck next time
+      self.log('error', 'getRegistrations failed on initialization, exiting process', String(err));
+      return process.exit(1);
+    }
+    self.log('debug', regs.length + ' known instances on startup');
+    // regs.forEach(function (reg) {
+    //   onOnline(reg);
+    // });
+  });
+
+  function onOnline (reg) {
+    self.log('debug', 'socket published ', [reg.id, 'online', reg]);
+    self.pub.send(reg.id, 'online', reg.stringify());
+  }
+
+  function onOffline(regId) {
+    self.log('debug', 'socket published ', [regId, 'offline']);
+    self.pub.send(regId, 'offline');
+  }
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  --redisDatabase  Redis database to select         [default: 0]
+  --reaperFreq     Reaper frequency (ms)            [default: 2000]
+  --debug          enabled debug logging
+
+
+## Server as an Embedded Module
+
+The same options above (except `debug`) may be passed by properties set in the `opts` object. For example using `new Thalassa.<span class="apidocCodeKeywordSpan">Server</span>(opts)`:
+
+var Thalassa = require('thalassa');
+
+var server = new Thalassa.Server({
+  port: 4444,
+  apiport: 4445,
+  host: 'localhost'
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.thalassa.Client" id="apidoc.module.thalassa.Client">module thalassa.Client</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.thalassa.Client.Client" id="apidoc.element.thalassa.Client.Client">
+        function <span class="apidocSignatureSpan">thalassa.</span>Client
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Client = function (opts) {
+  if (typeof opts !== 'object') opts = {};
+  this.log = (typeof opts.log === 'function') ? opts.log : function (){};
+
+  EventEmitter.call(this);
+
+  this.APIPORT        = opts.apiport || 9000;
+  this.PORT           = opts.port || 5001;
+  this.HOST           = opts.host || '127.0.0.1';
+  this.UPDATE_FREQ    = opts.updateFreq || 20000;
+  this.TIMEOUT        = opts.updateTimeout || 2500;
+  this.SEC_TO_EXPIRE  = opts.secsToExpire || 60;
+  this.MODE           = opts.mode || 'http';
+  this.MY_IP          = ip.address();
+
+  this.isOn = false;
+  this.intents = [];
+  this.regCache = {};
+  this.pending = {};
+
+  this.socket = null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    --secsToExpire   default time in seconds for a thalassa registration to be valid  [default: 60]
+    --updateFreq     time frequency in ms to ping the thalassa server                 [default: 20000]
+    --updateTimeout  time in ms to wait for a registrion request to respond           [default: 2500]
+    --debug          enabled debug logging
+
+## Client as an Embedded Module
+
+Using the client from within a node.js application to register your service is simple. Pass options via the `opts` object like `
+new Thalassa.<span class="apidocCodeKeywordSpan">Client</span>(opts)`:
+
+var Thalassa = require('thalassa');
+
+var client = new Thalassa.Client({
+  port: 4444,
+  apiport: 4445,
+  host: 'localhost'
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thalassa.Client.super_" id="apidoc.element.thalassa.Client.super_">
+        function <span class="apidocSignatureSpan">thalassa.Client.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.thalassa.Client.prototype" id="apidoc.module.thalassa.Client.prototype">module thalassa.Client.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.thalassa.Client.prototype._keySearch" id="apidoc.element.thalassa.Client.prototype._keySearch">
+        function <span class="apidocSignatureSpan">thalassa.Client.prototype.</span>_keySearch
+        <span class="apidocSignatureSpan">(name, version)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_keySearch = function (name, version) {
+  var keySearch = (name) ? ('/' + name) : '';
+  keySearch += (version) ? util.format('/%s/*', version) : '/*';
+  return keySearch;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thalassa.Client.prototype._sendHTTPUpdate" id="apidoc.element.thalassa.Client.prototype._sendHTTPUpdate">
+        function <span class="apidocSignatureSpan">thalassa.Client.prototype.</span>_sendHTTPUpdate
+        <span class="apidocSignatureSpan">(intent)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_sendHTTPUpdate = function (intent) {
+  // TODO batch multiple requests?
+  var self = this;
+  var uri = util.format('http://%s:%s/registrations/%s/%s/%s/%s', self.HOST, self.APIPORT, intent.name, intent.version, intent.host
+, intent.port);
+  var startTime = Date.now();
+
+  //
+  // If the last call is stil pending, don't add fuel to the fire
+  //
+  if (self.pending[intent.id]) {
+    self.log('error', 'Thalassa:Client._sendHTTPUpdate last call still pending! (skipping): ' + intent.id);
+    return ;
+  }
+
+  self.pending[intent.id] = true;
+
+  request({
+    uri: uri,
+    method: 'POST',
+    json: intent.meta,
+    timeout: self.TIMEOUT
+  },
+  function (error, response, body) {
+    self.pending[intent.id] = false;
+
+    // Check for an unsuccessful response, in case, for example we call the wrong
+    // host and it returns a 404, etc.
+    if (!error &amp;&amp; response.statusCode !== 200) {
+      error = new Error(util.format('unexpected response statusCode %s from %s',
+                        response.statusCode, uri));
+    }
+
+    if (error) {
+      self.log('error', 'Thalassa:Client._sendUpdate', error);
+      self.emit('updateFailed', error);
+    }
+    else {
+      self.emit('updateSuccessful');
+      self.log('debug', util.format('Thalassa:Client._sendUpdate (%s) [%s] %s', response.statusCode, Date.now() - startTime, uri
+));
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thalassa.Client.prototype._sendUpdate" id="apidoc.element.thalassa.Client.prototype._sendUpdate">
+        function <span class="apidocSignatureSpan">thalassa.Client.prototype.</span>_sendUpdate
+        <span class="apidocSignatureSpan">(intent)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_sendUpdate = function (intent) {
+  if (this.MODE === 'http') {
+    this._sendHTTPUpdate(intent);
+  }
+  else {
+    this.log('error', 'Thalassa:Client._sendUpdate: unsupported mode ' + this.mode);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thalassa.Client.prototype._startUpdateInterval" id="apidoc.element.thalassa.Client.prototype._startUpdateInterval">
+        function <span class="apidocSignatureSpan">thalassa.Client.prototype.</span>_startUpdateInterval
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_startUpdateInterval = function () {
+  var self = this;
+  update();
+  self._updateInterval = setInterval(update, self.UPDATE_FREQ);
+
+  function update () {
+    self.intents.forEach(self._sendUpdate.bind(self));
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thalassa.Client.prototype.close" id="apidoc.element.thalassa.Client.prototype.close">
+        function <span class="apidocSignatureSpan">thalassa.Client.prototype.</span>close
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">close = function () {
+  var self = this;
+  this.stop();
+  if (this.socket) this.socket.close();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thalassa.Client.prototype.del" id="apidoc.element.thalassa.Client.prototype.del">
+        function <span class="apidocSignatureSpan">thalassa.Client.prototype.</span>del
+        <span class="apidocSignatureSpan">(name, version, host, port, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">del = function (name, version, host, port, cb) {
+  var self = this;
+  var uri = util.format('http://%s:%s/registrations/%s/%s/%s/%s', self.HOST, self.APIPORT, name, version, host, port);
+  request({
+    uri: uri,
+    json: true,
+    method: 'DELETE'
+  },
+  function (error, response, body) {
+    if (error) self.log('error', 'Thalassa:Client.del', error);
+    if (response &amp;&amp; response.statusCode !== 200 &amp;&amp; response.statusCode !== 404) {
+      self.log('error', 'Thalassa:Client.del unexpected response ' + response.statusCode);
+      error = new Error("del unexpected response " + response.statusCode);
+    }
+    if (typeof cb === 'function') cb(error);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        version: this.params.version,
+        host: this.params.host,
+        port: this.params.port
+      };
+
+      var regId = registrations.create(reg).id;
+
+      server.data.<span class="apidocCodeKeywordSpan">del</span>(regId, function (err) {
+        if (err) reply(err);
+        else reply(200);
+      });
+    }
+  }
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thalassa.Client.prototype.getRegistrations" id="apidoc.element.thalassa.Client.prototype.getRegistrations">
+        function <span class="apidocSignatureSpan">thalassa.Client.prototype.</span>getRegistrations
+        <span class="apidocSignatureSpan">(name, version, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getRegistrations = function (name, version, cb) {
+  var self = this;
+
+  var path;
+  if (typeof name === 'function') {
+    cb = name;
+    path = '/registrations';
+  }
+  else if (typeof version === 'function') {
+    cb = version;
+    path = util.format('/registrations/%s', name);
+  }
+  else if (typeof cb === 'function') {
+    path = util.format('/registrations/%s/%s', name, version);
+  }
+
+  var uri = util.format('http://%s:%s%s', self.HOST, self.APIPORT, path);
+
+  self.log('debug', 'Thalassa:Client.getRegistrations uri: ' + uri);
+
+  request({
+    uri: uri,
+    json: true
+  },
+  function (error, response, body) {
+    if (error) self.log('error', 'Thalassa:Client.getRegistrations', error);
+    if (response &amp;&amp; response.statusCode !== 200 &amp;&amp; response.statusCode !== 404) {
+      self.log('error', 'Thalassa:Client.getRegistrations unexpected response ' + response.statusCode);
+      error = new Error("getRegistrations unexpected response " + response.statusCode);
+    }
+    if (error) return cb(error);
+
+    var regs = (response.statusCode !== 200) ? [] : body;
+    cb(null, regs);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    client.subscribe();
+
+### Querying Registrations
+
+Also as a module, you can use the client API to query for registrations.
+
+    client.<span class="apidocCodeKeywordSpan">getRegistrations</span>('myapp', '1.0.0', function (err, registrations
+) {
+        // registrations is an Array of Registrations
+    }
+See the HTTP API section for the `Registration` structure.
+
+### Metadata
+
+You can also pass metadata with any registration as a fourth parameter. This can be any javascript object with properties. For example
+:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thalassa.Client.prototype.register" id="apidoc.element.thalassa.Client.prototype.register">
+        function <span class="apidocSignatureSpan">thalassa.Client.prototype.</span>register
+        <span class="apidocSignatureSpan">(name, version, port, meta)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">register = function (name, version, port, meta) {
+  var self = this;
+  var reg = {
+    name: name,
+    version: version,
+    host: self.MY_IP,
+    port: port,
+    meta: meta || {}
+  };
+
+  if (!reg.meta.hostname) {
+    reg.meta.hostname = reg.host;
+  }
+
+  if (!reg.meta.secondsToExpire) {
+    reg.meta.secondsToExpire = this.SEC_TO_EXPIRE;
+  }
+
+  reg.meta.hostname = os.hostname();
+  reg.meta.pid = process.pid;
+  reg.meta.registered = Date.now();
+
+  var intent = registrations.create(reg);
+  self.intents.push(intent);
+
+  if (self.isOn) {
+    self._sendUpdate(intent);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var client = new Thalassa.Client({
+  port: 4444,
+  apiport: 4445,
+  host: 'localhost'
+});
+
+client.<span class="apidocCodeKeywordSpan">register</span>('myapp', '1.0.0', 8080);
+
+// start reporting registrations to the server
+client.start();
+
+// stop reporting registrations to the server
+client.stop();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thalassa.Client.prototype.socketConnect" id="apidoc.element.thalassa.Client.prototype.socketConnect">
+        function <span class="apidocSignatureSpan">thalassa.Client.prototype.</span>socketConnect
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">socketConnect = function () {
+  var self = this;
+  if (this.socket === null) {
+    this.socket = axon.socket('sub');
+    this.socket.set('identity', this.MY_IP + ':' + this.PORT);
+    self.log('info', 'Thalassa:Client.socketConnect: connecting to socket ' + this.HOST + ':' + this.PORT);
+    this.socket.connect(this.PORT, this.HOST);
+
+    this.socket.on('message', function (regId, state, reg) {
+      regId = regId.toString();
+      state = state.toString();
+
+      if (state === 'online') {
+        var updatedReg = JSON.parse(reg);
+        if(regId in self.regCache){
+          //if we already have the registration, and no metadata changed, do nothing
+          if(deepEqual(updatedReg.meta, self.regCache[regId].meta))
+            return;
+        }
+        self.regCache[regId] = updatedReg;
+        self.emit('online', registrations.parse(reg.toString()));
+      }
+      else if (state === 'offline') {
+        if(regId in self.regCache) delete self.regCache[regId];
+        self.emit('offline', regId);
+      }
+      else {
+        self.log('info', 'Thalassa:Client.onMessage: ignoring message, unknown state ', arguments.map(function (b) { b.toString(); }));
+      }
+    });
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thalassa.Client.prototype.start" id="apidoc.element.thalassa.Client.prototype.start">
+        function <span class="apidocSignatureSpan">thalassa.Client.prototype.</span>start
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">start = function () {
+  var self = this;
+  if (!self.isOn) {
+    self.isOn = true;
+    self._startUpdateInterval();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      apiport: 4445,
+      host: 'localhost'
+    });
+
+    client.register('myapp', '1.0.0', 8080);
+
+    // start reporting registrations to the server
+    client.<span class="apidocCodeKeywordSpan">start</span>();
+
+    // stop reporting registrations to the server
+    client.stop();
+
+`opts.log` may be passed just like the server.
+
+### `updateSuccessful` and `updateFailed` Events
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thalassa.Client.prototype.stop" id="apidoc.element.thalassa.Client.prototype.stop">
+        function <span class="apidocSignatureSpan">thalassa.Client.prototype.</span>stop
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stop = function () {
+  var self = this;
+  self.isOn = false;
+  clearInterval(self._updateInterval);
+  Object.keys(self.regCache).forEach(function (key) {
+    var reg = self.regCache[key];
+    delete self.regCache[key];
+    self.unregister(reg.name,reg.version,reg.port);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    client.register('myapp', '1.0.0', 8080);
+
+    // start reporting registrations to the server
+    client.start();
+
+    // stop reporting registrations to the server
+    client.<span class="apidocCodeKeywordSpan">stop</span>();
+
+`opts.log` may be passed just like the server.
+
+### `updateSuccessful` and `updateFailed` Events
+
+The client will periodically check in with the Thalassa server according to `opts.updateFreq` (default 20000ms). Each registration
+ will product a `updateSuccessful` or `updateFailed` event to be emitted.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thalassa.Client.prototype.subscribe" id="apidoc.element.thalassa.Client.prototype.subscribe">
+        function <span class="apidocSignatureSpan">thalassa.Client.prototype.</span>subscribe
+        <span class="apidocSignatureSpan">(name, version)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">subscribe = function (name, version) {
+  if (this.socket === null) this.socketConnect();
+  var prefix = this._keySearch(name, version);
+  this.log('debug', 'Thalassa:Client.subscribe ' + prefix);
+  this.socket.subscribe(prefix);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  client.on('updateSuccessful', function () {});
+  client.on('updateFailed', function (error) {});
+
+### Subscriptions and `online` and `offline` Events
+
+If running as a module, you also have access to `subscribe` to `online` and `offline` events of certain applications. For example
+:
+
+client.<span class="apidocCodeKeywordSpan">subscribe</span>('myapp', '1.0.0');
+client.on('online', function (registration) {});
+client.on('offline', function (registration) {});
+
+Alternatively for all versions of `myapp`:
+
+client.subscribe('myapp');
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thalassa.Client.prototype.unregister" id="apidoc.element.thalassa.Client.prototype.unregister">
+        function <span class="apidocSignatureSpan">thalassa.Client.prototype.</span>unregister
+        <span class="apidocSignatureSpan">(name, version, port)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unregister = function (name, version, port) {
+  var self = this;
+  var host = self.MY_IP;
+  var reg = registrations.create({
+    name: name,
+    version: version,
+    host: host,
+    port: port,
+  });
+
+  //
+  // filter out the unwanted registration intent
+  //
+  self.intents = self.intents.filter(function (intent) {
+    return reg.id !== intent.id;
+  });
+
+  //
+  // explicitely delete the registration so the offline notifications happen immediately
+  //
+  self.del(name, version, host, port);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thalassa.Client.prototype.unsubscribe" id="apidoc.element.thalassa.Client.prototype.unsubscribe">
+        function <span class="apidocSignatureSpan">thalassa.Client.prototype.</span>unsubscribe
+        <span class="apidocSignatureSpan">(name, version)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unsubscribe = function (name, version) {
+  if (this.socket === null) this.socketConnect();
+  var prefix = this._keySearch(name, version);
+  this.log('info', 'Thalassa:Client.unsubscribe ' + prefix);
+  this.socket.unsubscribe(prefix);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.thalassa.RedisData" id="apidoc.module.thalassa.RedisData">module thalassa.RedisData</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.thalassa.RedisData.RedisData" id="apidoc.element.thalassa.RedisData.RedisData">
+        function <span class="apidocSignatureSpan">thalassa.</span>RedisData
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function RedisData(opts) {
+  events.EventEmitter.call(this);
+
+  if (!opts) opts = {};  var self = this;
+  this.log = (typeof opts.log === 'function') ? opts.log : noop;
+
+  this.SECONDS_TO_EXPIRE = opts.secondsToExpire || 10;
+  this.REGISTRATIONS_SET_KEY = '__thalassa.registrations';
+  this.REDIS_HOST = opts.redisHost || '127.0.0.1';
+  this.REDIS_PORT = opts.redisPort || 6379;
+  this.REDIS_DB = opts.redisDatabase || 0;
+
+  this.redisClient = redis.createClient(this.REDIS_PORT, this.REDIS_HOST);
+  this.redisClient.select(this.REDIS_DB);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thalassa.RedisData.super_" id="apidoc.element.thalassa.RedisData.super_">
+        function <span class="apidocSignatureSpan">thalassa.RedisData.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.thalassa.RedisData.prototype" id="apidoc.module.thalassa.RedisData.prototype">module thalassa.RedisData.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.thalassa.RedisData.prototype._getRegistrations" id="apidoc.element.thalassa.RedisData.prototype._getRegistrations">
+        function <span class="apidocSignatureSpan">thalassa.RedisData.prototype.</span>_getRegistrations
+        <span class="apidocSignatureSpan">(keySearch, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _getRegistrations(keySearch, cb) {
+  var self = this;
+  var client = this.redisClient;
+
+  client.keys(keySearch, function (error, ids) {
+      if (error) return cb(error);
+
+      if (!ids || ids.length === 0) return cb(null, []);
+      var regIds = ids.filter(function (id) { return registrations.isRegistrationId(id); });
+      if (regIds.length === 0) return cb(null, []);
+
+      client.mget(ids, function (error, stringifiedRegs) {
+        if (error) return cb(error);
+        var regs = stringifiedRegs
+              .map(function(stringifiedReg) { return registrations.parse(stringifiedReg); });
+        cb(null, regs);
+      });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+   keySearch = util.format('/%s/*', name);
+ }
+ else if (typeof cb === 'function') {
+   keySearch = util.format('/%s/%s/*', name, version);
+ }
+
+ cb = callback(cb);
+ this.<span class="apidocCodeKeywordSpan">_getRegistrations</span>(keySearch, cb);
+};
+
+/**
+* Find all `Registration`s for a `keySearch` prefix
+*
+* @api private
+* @param {String} keySearch - Redis `regId` key prefix to search for registrations
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thalassa.RedisData.prototype.clearDb" id="apidoc.element.thalassa.RedisData.prototype.clearDb">
+        function <span class="apidocSignatureSpan">thalassa.RedisData.prototype.</span>clearDb
+        <span class="apidocSignatureSpan">(cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function clearDb(cb) {
+  this.redisClient.flushdb(callback(cb));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thalassa.RedisData.prototype.del" id="apidoc.element.thalassa.RedisData.prototype.del">
+        function <span class="apidocSignatureSpan">thalassa.RedisData.prototype.</span>del
+        <span class="apidocSignatureSpan">(regId, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function del(regId, cb) {
+  cb = callback(cb);
+  var self = this;
+  var client = this.redisClient;
+  client.multi()
+  .del(regId)
+  .zrem(this.REGISTRATIONS_SET_KEY, regId)
+  .exec(function (error, replies) {
+    self.emit('offline', regId);
+    cb(error);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        version: this.params.version,
+        host: this.params.host,
+        port: this.params.port
+      };
+
+      var regId = registrations.create(reg).id;
+
+      server.data.<span class="apidocCodeKeywordSpan">del</span>(regId, function (err) {
+        if (err) reply(err);
+        else reply(200);
+      });
+    }
+  }
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thalassa.RedisData.prototype.getRegistrations" id="apidoc.element.thalassa.RedisData.prototype.getRegistrations">
+        function <span class="apidocSignatureSpan">thalassa.RedisData.prototype.</span>getRegistrations
+        <span class="apidocSignatureSpan">(name, version, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getRegistrations(name, version, cb) {
+
+<span class="apidocCodeCommentSpan">/**
+ */
+</span>  var keySearch;
+  if (typeof name === 'function') {
+    cb = name;
+    keySearch = '/*';
+  }
+  else if (typeof version === 'function') {
+    cb = version;
+    keySearch = util.format('/%s/*', name);
+  }
+  else if (typeof cb === 'function') {
+    keySearch = util.format('/%s/%s/*', name, version);
+  }
+
+  cb = callback(cb);
+  this._getRegistrations(keySearch, cb);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    client.subscribe();
+
+### Querying Registrations
+
+Also as a module, you can use the client API to query for registrations.
+
+    client.<span class="apidocCodeKeywordSpan">getRegistrations</span>('myapp', '1.0.0', function (err, registrations
+) {
+        // registrations is an Array of Registrations
+    }
+See the HTTP API section for the `Registration` structure.
+
+### Metadata
+
+You can also pass metadata with any registration as a fourth parameter. This can be any javascript object with properties. For example
+:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thalassa.RedisData.prototype.runReaper" id="apidoc.element.thalassa.RedisData.prototype.runReaper">
+        function <span class="apidocSignatureSpan">thalassa.RedisData.prototype.</span>runReaper
+        <span class="apidocSignatureSpan">(cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function runReaper(cb) {
+  cb = callback(cb);
+  var self = this;
+  var client = this.redisClient;
+
+  var reaperScript = "\
+local res = redis.call('ZRANGEBYSCORE',KEYS[1], 0, ARGV[1], 'LIMIT', 0, 100 ) \
+if #res &gt; 0 then \
+   redis.call( 'ZREMRANGEBYRANK', KEYS[1], 0, #res-1 ) \
+   return res \
+else \
+   return false \
+end";
+
+  function evalCallback (error, reaped) {
+    if (error) self.log('error', error.message || error);
+    if (!reaped) reaped = [];
+
+    reaped.forEach(function (regId) {
+      self.del(regId);
+    });
+
+    if (reaped.length &gt; 0) {
+      self.log('debug', 'RedisData.runReaper: reaped ' + reaped.length + ' registrations', reaped);
+    }
+
+    cb(error, reaped);
+  }
+
+  // the redis client isn't accepting an array of arguments for
+  // eval for some reason. This doesn't look as nice, but works
+  client.EVAL.apply(client, [reaperScript, 1, self.REGISTRATIONS_SET_KEY, Date.now(), evalCallback]);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thalassa.RedisData.prototype.update" id="apidoc.element.thalassa.RedisData.prototype.update">
+        function <span class="apidocSignatureSpan">thalassa.RedisData.prototype.</span>update
+        <span class="apidocSignatureSpan">(reg, secondsToExpire, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function update(reg, secondsToExpire, cb) {
+  var self = this;
+  if (typeof secondsToExpire === 'function' &amp;&amp; cb === undefined) {
+    cb = secondsToExpire;
+    secondsToExpire = self.SECONDS_TO_EXPIRE;
+  }
+  else if (!secondsToExpire) {
+    secondsToExpire = self.SECONDS_TO_EXPIRE;
+  }
+  cb = callback(cb);
+
+  stats.meter('registrationsPerSecond').mark();
+
+  var registration = registrations.create(reg);
+
+  var client = this.redisClient;
+  var timeToExpire = Date.now() + ((secondsToExpire) * 1000);
+
+  client.multi()
+    //
+    // set the registration details to a key by id
+    // /name/version/host/port
+    //
+    .set(registration.id, registration.stringify())
+    //
+    // add the timeToExpire to the registrations sorted set
+    //
+    .zadd(self.REGISTRATIONS_SET_KEY, timeToExpire, registration.id, function (error, numNew) {
+      //self.log('debug', 'RedisData.update ' + registration.id + ' ' + timeToExpire);
+      self.emit('online', registration);
+    })
+    .exec(function (error, replies) {
+      //self.log('debug', 'RedisData.update redis multi replies', replies);
+      cb(error);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        name: this.params.name,
+        version: this.params.version,
+        host: this.params.host,
+        port: this.params.port,
+        meta: request.payload || {}
+      };
+
+      server.data.<span class="apidocCodeKeywordSpan">update</span>(reg, reg.meta.secondsToExpire, function (err) {
+        if (err) reply(err);
+        else reply(200);
+      });
+    }
+  }
+});
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.thalassa.Server" id="apidoc.module.thalassa.Server">module thalassa.Server</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.thalassa.Server.Server" id="apidoc.element.thalassa.Server.Server">
+        function <span class="apidocSignatureSpan">thalassa.</span>Server
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Server = function (opts) {
+  var self = this;
+  if (typeof opts !== 'object') opts = {};
+  this.log = (typeof opts.log === 'function') ? opts.log : function (){};
+
+  this.PORT         = opts.port || 5001;
+  this.IP           = ip.address();
+  this.API_PORT     = opts.apiport || 9000;
+  this.REAPER_FREQ  = opts.reaperFreq || 2000;
+  this.UPDATE_FREQ  = opts.updateFreq || 30000;
+
+  this.pub = axon.socket('pub');
+
+  var me = {
+    name:     pkg.name,
+    version:  pkg.version,
+    host:     self.IP,
+    port:     self.API_PORT,
+    meta:     {
+      hostname: require('os').hostname,
+      axonSocket: self.PORT
+    }
+  };
+
+  var secondsToExpire = Math.ceil((this.UPDATE_FREQ / 1000) * 2);
+
+  //
+  // Connect to Redis, register yourself, and do so regularly
+  //
+  this.data = new RedisData(opts);
+  self.data.update(me, secondsToExpire);
+  this._updateInterval = setInterval(function () {
+    self.data.update(me, secondsToExpire);
+  }, this.UPDATE_FREQ);
+
+  //
+  // API server
+  //
+  this.apiServer = Hapi.createServer(this.API_PORT);
+  require('./httpApi')(this);
+  this.apiServer.start(function () {
+    self.log('info', util.format("Thalassa API HTTP server listening on %s", self.API_PORT));
+  });
+
+  //
+  // Schedule the Reaper!
+  //
+  this._reaperInterval = setInterval(function () {
+    self.data.runReaper();
+  }, this.REAPER_FREQ);
+
+  //
+  // Setup Publisher Socket
+  //
+  self.pub.set('identity', 'thalassa|' + this.IP + ':' + this.PORT);
+  self.log('debug', util.format("attempting to bind to %s", this.PORT));
+  self.pub.bind(this.PORT);
+  this.data.on('online', onOnline);
+  this.data.on('offline', onOffline);
+  self.log('info', util.format("Thalassa socket server listening at %s", this.PORT));
+
+  //
+  // At startup, publish `online` for all existing registrations.
+  // Do this before the reaper interval runs the first time. By then hopefully clients
+  // will have had the opportunity to check back in if Thalassa was down and no other
+  // Thalassa server was running, reaping and serving check ins
+  //
+  self.log('debug', "Publishing 'online' for all known registrations");
+  this.data.getRegistrations(function (err, regs) {
+    if (err) {
+      // this is not good, error, exit the process and better luck next time
+      self.log('error', 'getRegistrations failed on initialization, exiting process', String(err));
+      return process.exit(1);
+    }
+    self.log('debug', regs.length + ' known instances on startup');
+    // regs.forEach(function (reg) {
+    //   onOnline(reg);
+    // });
+  });
+
+  function onOnline (reg) {
+    self.log('debug', 'socket published ', [reg.id, 'online', reg]);
+    self.pub.send(reg.id, 'online', reg.stringify());
+  }
+
+  function onOffline(regId) {
+    self.log('debug', 'socket published ', [regId, 'offline']);
+    self.pub.send(regId, 'offline');
+  }
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  --redisDatabase  Redis database to select         [default: 0]
+  --reaperFreq     Reaper frequency (ms)            [default: 2000]
+  --debug          enabled debug logging
+
+
+## Server as an Embedded Module
+
+The same options above (except `debug`) may be passed by properties set in the `opts` object. For example using `new Thalassa.<span class="apidocCodeKeywordSpan">Server</span>(opts)`:
+
+var Thalassa = require('thalassa');
+
+var server = new Thalassa.Server({
+  port: 4444,
+  apiport: 4445,
+  host: 'localhost'
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.thalassa.Server.prototype" id="apidoc.module.thalassa.Server.prototype">module thalassa.Server.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.thalassa.Server.prototype.close" id="apidoc.element.thalassa.Server.prototype.close">
+        function <span class="apidocSignatureSpan">thalassa.Server.prototype.</span>close
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">close = function () {
+  this.apiServer.stop();
+  clearInterval(this._updateInterval);
+  clearInterval(this._reaperInterval);
+  this.data.redisClient.end();
+  this.pub.close();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
